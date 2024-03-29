@@ -12,30 +12,18 @@ endif()
 
 add_library(calc SHARED)
 
-target_sources(calc
-    PUBLIC
-        FILE_SET CXX_MODULES
-        FILES
-            src/oper.ixx
-            src/calc.ixx
-    PRIVATE
-        src/calc.cpp
-)
+set(public_sources PUBLIC FILE_SET CXX_MODULES FILES src/oper.ixx src/calc.ixx)
+
+target_sources(calc ${public_sources} PRIVATE src/calc.cpp)
+#target_compile_features(calc PUBLIC cxx_std_20)
 
 add_executable(calculator src/main.cpp)
-target_sources(calculator
-    PUBLIC
-        FILE_SET CXX_MODULES
-        FILES
-            src/oper.ixx
-            src/calc.ixx
-    PRIVATE
-        src/main.cpp
-)
 
-#add_executable(calculator src/main.cpp)
+target_sources(calculator ${public_sources} PRIVATE src/main.cpp)
+
 ##target_compile_options(calculator PRIVATE -fimplicit-modules -fimplicit-module-maps -fprebuilt-module-path=${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/calc.dir)
-target_compile_features(calculator PUBLIC cxx_std_20)
+#target_compile_features(calculator PUBLIC cxx_std_20)
 target_link_libraries(calculator calc)
+
 
 
