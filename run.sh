@@ -6,4 +6,4 @@ fi
 export CFLAGS="-stdlib=libc++ -fmodules -fbuiltin-module-map"
 cmake -G Ninja -B build -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_CXX_FLAGS:STRING="$CFLAGS" -DCMAKE_BUILD_TYPE=Release
 ninja -C build
-./build/test_modules
+./build/calculator

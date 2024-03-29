@@ -5,6 +5,7 @@ import calc;
 
 int main()
 {
-	std::cout << calc(3, 4, "add") << std::endl;
-	std::cout << add(3, 4) << std::endl;
+	int a = 2, b = 1;
+	std::cout << a << " + " << b << " = " << calc(a, b, "add") << std::endl;
+	std::cout << a << " - " << b << " = " << calc(a, b, "sub") << std::endl;
 }

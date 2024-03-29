@@ -4,11 +4,11 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-project(test_modules LANGUAGES CXX)
+project(calculator LANGUAGES CXX)
 
-add_executable(test_modules src/main.cpp)
+add_executable(calculator src/main.cpp)
 
-target_sources(test_modules
+target_sources(calculator
     PUBLIC
         FILE_SET CXX_MODULES
         FILES
