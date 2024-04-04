@@ -10,9 +10,7 @@ add_compile_options(-stdlib=libc++ -fmodules -fbuiltin-module-map)
 add_link_options(-stdlib=libc++ -fmodules -fbuiltin-module-map)
 
 add_executable(main)
-set(public_sources PUBLIC FILE_SET CXX_MODULES FILES src/oper.ixx src/calc.ixx)
-target_sources(main ${public_sources} PUBLIC src/main.cpp)
+target_sources(main ${public_interfaces} PUBLIC src/main.cpp)
 
 target_link_libraries(main calc)
-
 
