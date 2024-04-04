@@ -8,8 +8,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_compile_options(-stdlib=libc++ -fmodules -fbuiltin-module-map)
 add_library(calc SHARED)
-target_sources(calc PUBLIC FILE_SET CXX_MODULES FILES src/oper.ixx src/calc.ixx PRIVATE src/calc.cpp)
-
-
+target_sources(calc PUBLIC FILE_SET CXX_MODULES FILES ${public_interfaces} PRIVATE src/calc.cpp)
 
 

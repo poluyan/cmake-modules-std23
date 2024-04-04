@@ -13,4 +13,3 @@ add_executable(main)
 target_sources(main ${public_interfaces} PUBLIC src/main.cpp)
 
 target_link_libraries(main calc)
-
